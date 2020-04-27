@@ -1,8 +1,12 @@
 package com.nagarro.ticketapp.server.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -36,91 +40,129 @@ public class User {
 	private long zip;
 	@Column(name = "IsAdmin")
 	private boolean admin;
-	
+	@OneToMany(mappedBy = "user")
+	private List<UserTicket> UserTickets = new ArrayList<UserTicket>();
+
+	public List<UserTicket> getUserTickets() {
+		return UserTickets;
+	}
+
+	public void setUserTickets(List<UserTicket> UserTickets) {
+		this.UserTickets = UserTickets;
+	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public String getPwd() {
 		return pwd;
 	}
+
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
+
 	public String getfName() {
 		return fName;
 	}
+
 	public void setfName(String fName) {
 		this.fName = fName;
 	}
+
 	public String getlName() {
 		return lName;
 	}
+
 	public void setlName(String lName) {
 		this.lName = lName;
 	}
+
 	public String getBU() {
 		return BU;
 	}
+
 	public void setBU(String bU) {
 		BU = bU;
 	}
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	public String getTel() {
 		return tel;
 	}
+
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
+
 	public String getAdd1() {
 		return add1;
 	}
+
 	public void setAdd1(String add1) {
 		this.add1 = add1;
 	}
+
 	public String getAdd2() {
 		return add2;
 	}
+
 	public void setAdd2(String add2) {
 		this.add2 = add2;
 	}
+
 	public String getCity() {
 		return city;
 	}
+
 	public void setCity(String city) {
 		this.city = city;
 	}
+
 	public String getState() {
 		return state;
 	}
+
 	public void setState(String state) {
 		this.state = state;
 	}
+
 	public String getCountry() {
 		return country;
 	}
+
 	public void setCountry(String country) {
 		this.country = country;
 	}
+
 	public long getZip() {
 		return zip;
 	}
+
 	public void setZip(long zip) {
 		this.zip = zip;
 	}
+
 	public boolean isAdmin() {
 		return admin;
 	}
+
 	public void setAdmin(boolean admin) {
 		this.admin = admin;
 	}
+
 	@Override
 	public String toString() {
 		return "Login [email=" + email + ", pwd=" + pwd + ", fName=" + fName + ", lName=" + lName + ", BU=" + BU

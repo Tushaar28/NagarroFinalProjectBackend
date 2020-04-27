@@ -46,7 +46,7 @@ public class JwtUtil {
 	private String createToken(Map<String, Object> claims, User user) {
 		return Jwts.builder()
 				.setClaims(claims)
-				.claim("id", user.getEmail())
+				.setSubject(user.getEmail())
 				.claim("BU", user.getBU())
 				.claim("Address1", user.getAdd1())
 				.claim("Address2", user.getAdd2())
@@ -64,8 +64,8 @@ public class JwtUtil {
 				.signWith(SignatureAlgorithm.HS256, SECRET_KEY).compact();
 	}
 	
-	public Boolean validateToken(String token, User user) {
+	public Boolean validateToken(String token, String id) {
 		final String username = extractUsername(token);
-		return (username.equals(user.getEmail()) && !isTokenExpired(token));
+		return (username.equals(id) && !isTokenExpired(token));
 	}
 }
