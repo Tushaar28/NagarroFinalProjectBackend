@@ -5,5 +5,9 @@
 <fullyQualifiedTypeName name="javax.persistence.Column"/>
 <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
 <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
+<fullyQualifiedTypeName name="com.nagarro.ticketapp.server.repository.UserRepo"/>
+<fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+<fullyQualifiedTypeName name="com.nagarro.ticketapp.server.util.TicketResponseGenerator"/>
 <fullyQualifiedTypeName name="com.nagarro.ticketapp.server.model.UserTicket"/>
+<fullyQualifiedTypeName name="com.google.gson.JsonObject"/>
 </qualifiedTypeNameHistroy>

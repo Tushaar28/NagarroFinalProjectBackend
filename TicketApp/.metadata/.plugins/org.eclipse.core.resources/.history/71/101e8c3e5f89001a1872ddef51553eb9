@@ -1,0 +1,29 @@
+package com.nagarro.ticketapp.server.util;
+
+import com.google.gson.JsonObject;
+import com.nagarro.ticketapp.server.model.*;
+public class TicketResponseGenerator {
+	public static JsonObject generate(UserTicket t, String id) {
+		JsonObject ticket = new JsonObject();
+		ticket.addProperty("id", t.getId() + "");
+		ticket.addProperty("type", t.getType());
+		ticket.addProperty("priority", t.getPriority() + "");
+		ticket.addProperty("dest", t.getDest());
+		ticket.addProperty("src", t.getSrc());
+		ticket.addProperty("start_date", t.getStartDate());
+		ticket.addProperty("end_date", t.getEndDate());
+		ticket.addProperty("approver", t.getApprover());
+		ticket.addProperty("bearer", t.getBearer() + "");
+		ticket.addProperty("limit", t.getLimit());
+		ticket.addProperty("deatils", t.getDetails());
+		ticket.addProperty("duration", t.getDuration() + "");
+		ticket.addProperty("passport", t.getPassport());
+		ticket.addProperty("project", t.getProject());
+		ticket.addProperty("details", t.getDetails());
+		ticket.addProperty("status", t.getStatus());
+		//ticket.addProperty("isProcessing", t.isProcessing());
+		ticket.addProperty("username", id);
+		return ticket;
+	}
+	
+}

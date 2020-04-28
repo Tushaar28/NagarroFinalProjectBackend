@@ -1,0 +1,5 @@
+package com.nagarro.ticketapp.server.model;
+
+public class UserTicket {
+
+}
