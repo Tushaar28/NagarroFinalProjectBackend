@@ -1,0 +1,77 @@
+package com.nagarro.ticketapp.server.util;
+
+import java.util.List;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.nagarro.ticketapp.server.model.User;
+import com.nagarro.ticketapp.server.model.UserTicket;
+public class TicketResponseGenerator {
+	public static JsonObject generate(UserTicket t, String id) {
+		JsonObject ticket = new JsonObject();
+		ticket.addProperty("id", t.getId());
+		ticket.addProperty("type", t.getType());
+		ticket.addProperty("priority", t.getPriority());
+		ticket.addProperty("dest", t.getDest());
+		ticket.addProperty("src", t.getSrc());
+		ticket.addProperty("start_date", t.getStartDate());
+		ticket.addProperty("end_date", t.getEndDate());
+		ticket.addProperty("approver", t.getApprover());
+		ticket.addProperty("bearer", t.getBearer());
+		ticket.addProperty("limit", t.getLimit());
+		ticket.addProperty("deatils", t.getDetails());
+		ticket.addProperty("duration", t.getDuration());
+		ticket.addProperty("passport", t.getPassport());
+		ticket.addProperty("project", t.getProject());
+		ticket.addProperty("details", t.getDetails());
+		ticket.addProperty("status", t.getStatus());
+		ticket.addProperty("isProcessing", t.isProcessing());
+		ticket.addProperty("username", id);
+		return ticket;
+	}
+	
+	public static JsonArray generateForAdmin(User user, JsonArray res) {
+		System.out.println(res);
+		JsonArray tickets = new JsonArray();
+		List<UserTicket> ticket = user.getUserTickets();
+		for(UserTicket t: ticket) {
+			JsonObject obj = new JsonObject();
+			obj.addProperty("issuedBy", user.getfName() + " " + user.getlName());
+			obj.addProperty("email", user.getEmail());
+			obj.addProperty("type", t.getType());
+			obj.addProperty("priority", t.getPriority());
+			obj.addProperty("dest", t.getDest());
+			obj.addProperty("src", t.getSrc());
+			obj.addProperty("start_date", t.getStartDate());
+			obj.addProperty("end_date", t.getEndDate());
+			obj.addProperty("approver", t.getApprover());
+			obj.addProperty("bearer", t.getBearer());
+			obj.addProperty("limit", t.getLimit());
+			obj.addProperty("deatils", t.getDetails());
+			obj.addProperty("duration", t.getDuration());
+			obj.addProperty("passport", t.getPassport());
+			obj.addProperty("project", t.getProject());
+			obj.addProperty("details", t.getDetails());
+			obj.addProperty("status", t.getStatus());
+			obj.addProperty("isProcessing", t.isProcessing());
+			tickets.add(obj);
+		}
+		return tickets;
+	}
+	
+	public static JsonObject test(User user) {
+		JsonObject obj = new JsonObject();
+		JsonArray tickets = new JsonArray();
+		List<UserTicket> ticket = user.getUserTickets();
+		for(UserTicket t: ticket) {
+			JsonObject temp = new JsonObject();
+			temp.addProperty("issuedBy", user.getfName() + " " + user.getlName());
+			temp.addProperty("type", t.getType());
+			temp.addProperty("priority", t.getPriority());
+			tickets.add(temp);
+		}
+		obj.addProperty("username", user.getEmail());
+		return obj;
+	}
+	
+}

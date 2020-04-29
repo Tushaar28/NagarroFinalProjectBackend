@@ -7,11 +7,14 @@
 <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
 <fullyQualifiedTypeName name="com.nagarro.ticketapp.server.repository.UserRepo"/>
 <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
-<fullyQualifiedTypeName name="com.google.gson.JsonObject"/>
 <fullyQualifiedTypeName name="com.nagarro.ticketapp.server.model.UserTicket"/>
 <fullyQualifiedTypeName name="com.nagarro.ticketapp.server.repository.UserTicketRepo"/>
-<fullyQualifiedTypeName name="com.nagarro.ticketapp.server.exceptions.ApiRequestException"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="com.nagarro.ticketapp.server.util.TicketResponseGenerator"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+<fullyQualifiedTypeName name="com.nagarro.ticketapp.server.exceptions.ApiRequestException"/>
+<fullyQualifiedTypeName name="com.nagarro.ticketapp.server.model.User"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.google.gson.JsonArray"/>
+<fullyQualifiedTypeName name="com.nagarro.ticketapp.server.util.TicketResponseGenerator"/>
+<fullyQualifiedTypeName name="com.google.gson.JsonObject"/>
 </qualifiedTypeNameHistroy>
