@@ -9,7 +9,6 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
 <fullyQualifiedTypeName name="com.nagarro.ticketapp.server.model.User"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.nagarro.ticketapp.server.repository.UserTicketRepo"/>
 <fullyQualifiedTypeName name="com.nagarro.ticketapp.server.util.SendCredentials"/>
 <fullyQualifiedTypeName name="javax.mail.internet.MimeMessage"/>
@@ -20,7 +19,6 @@
 <fullyQualifiedTypeName name="org.springframework.mail.MailException"/>
 <fullyQualifiedTypeName name="com.nagarro.ticketapp.server.util.TicketResponseGenerator"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
-<fullyQualifiedTypeName name="com.nagarro.ticketapp.server.model.UserTicket"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
 <fullyQualifiedTypeName name="com.google.gson.JsonArray"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
@@ -29,5 +27,8 @@
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PatchMapping"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestHeader"/>
 <fullyQualifiedTypeName name="com.nagarro.ticketapp.server.exceptions.ApiRequestException"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.DeleteMapping"/>
 <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.nagarro.ticketapp.server.model.UserTicket"/>
 </qualifiedTypeNameHistroy>
