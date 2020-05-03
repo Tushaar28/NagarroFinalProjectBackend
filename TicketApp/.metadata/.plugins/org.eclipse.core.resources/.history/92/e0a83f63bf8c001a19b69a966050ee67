@@ -1,0 +1,20 @@
+package com.nagarro.ticketapp.server.util;
+
+import com.google.gson.JsonObject;
+import com.nagarro.ticketapp.server.model.User;
+
+public class UserResponseGenerator {
+
+	public static JsonObject generateForAdmin(User u) {
+		JsonObject user = new JsonObject();
+		user.addProperty("First Name", u.getfName());
+		user.addProperty("Last Name", u.getlName());
+		user.addProperty("Email", u.getEmail());
+		user.addProperty("BU", u.getBU());
+		user.addProperty("Address 1", u.getAdd1());
+		user.addProperty("Address 2", u.getAdd2());
+		user.addProperty("City", u.getCity());
+		return user;
+	}
+
+}
