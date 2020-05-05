@@ -1,0 +1,85 @@
+package com.nagarro.ticketapp.server.util;
+
+import java.util.List;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.nagarro.ticketapp.server.model.User;
+import com.nagarro.ticketapp.server.model.UserTicket;
+public class TicketResponseGenerator {
+	public static JsonObject generate(UserTicket t, String id) {
+		JsonObject ticket = new JsonObject();
+		ticket.addProperty("id", t.getId());
+		ticket.addProperty("type", t.getType());
+		ticket.addProperty("priority", t.getPriority());
+		ticket.addProperty("destCity", t.getDestCity());
+		ticket.addProperty("srcCity", t.getSrcCity());
+		ticket.addProperty("destCountry", t.getDestCountry());
+		ticket.addProperty("srcCountry", t.getSrcCountry());
+		ticket.addProperty("start_date", t.getStartDate());
+		ticket.addProperty("end_date", t.getEndDate());
+		ticket.addProperty("approver", t.getApprover());
+		ticket.addProperty("bearer", t.getBearer());
+		ticket.addProperty("limit", t.getLimit());
+		ticket.addProperty("deatils", t.getDetails());
+		ticket.addProperty("duration", t.getDuration());
+		ticket.addProperty("passport", t.getPassport());
+		ticket.addProperty("project", t.getProject());
+		ticket.addProperty("details", t.getDetails());
+		ticket.addProperty("status", t.getStatus());
+		ticket.addProperty("isProcessing", t.isProcessing());
+		ticket.addProperty("username", id);
+		return ticket;
+	}
+	
+	public static JsonObject generateForAdmin(UserTicket t, User user) {
+		JsonObject ticket = new JsonObject();
+		ticket.addProperty("issuedBy", user.getfName() + " " + user.getlName());
+		ticket.addProperty("id", t.getId());
+		ticket.addProperty("type", t.getType());
+		ticket.addProperty("priority", t.getPriority());
+		ticket.addProperty("destCity", t.getDestCity());
+		ticket.addProperty("srcCity", t.getSrcCity());
+		ticket.addProperty("destCountry", t.getDestCountry());
+		ticket.addProperty("srcCountry", t.getSrcCountry());
+		ticket.addProperty("start_date", t.getStartDate());
+		ticket.addProperty("end_date", t.getEndDate());
+		ticket.addProperty("approver", t.getApprover());
+		ticket.addProperty("bearer", t.getBearer());
+		ticket.addProperty("limit", t.getLimit());
+		ticket.addProperty("deatils", t.getDetails());
+		ticket.addProperty("duration", t.getDuration());
+		ticket.addProperty("passport", t.getPassport());
+		ticket.addProperty("project", t.getProject());
+		ticket.addProperty("details", t.getDetails());
+		ticket.addProperty("status", t.getStatus());
+		ticket.addProperty("isProcessing", t.isProcessing());
+		ticket.addProperty("email", user.getEmail());
+		return ticket;
+	}
+	
+	public static JsonObject generateTicket(UserTicket t) {
+		JsonObject ticket = new JsonObject();
+		ticket.addProperty("id", t.getId());
+		ticket.addProperty("type", t.getType());
+		ticket.addProperty("priority", t.getPriority());
+		ticket.addProperty("destCity", t.getDestCity());
+		ticket.addProperty("srcCity", t.getSrcCity());
+		ticket.addProperty("destCountry", t.getDestCountry());
+		ticket.addProperty("srcCountry", t.getSrcCountry());
+		ticket.addProperty("start_date", t.getStartDate());
+		ticket.addProperty("end_date", t.getEndDate());
+		ticket.addProperty("approver", t.getApprover());
+		ticket.addProperty("bearer", t.getBearer());
+		ticket.addProperty("limit", t.getLimit());
+		ticket.addProperty("deatils", t.getDetails());
+		ticket.addProperty("duration", t.getDuration());
+		ticket.addProperty("passport", t.getPassport());
+		ticket.addProperty("project", t.getProject());
+		ticket.addProperty("details", t.getDetails());
+		ticket.addProperty("status", t.getStatus());
+		ticket.addProperty("isProcessing", t.isProcessing());
+		return ticket;
+	}
+	
+}

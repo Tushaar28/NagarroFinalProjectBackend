@@ -3,6 +3,7 @@ package com.nagarro.ticketapp.server.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -40,15 +41,18 @@ public class User {
 	private long zip;
 	@Column(name = "IsAdmin")
 	private boolean admin;
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, orphanRemoval = true)
 	private List<UserTicket> UserTickets = new ArrayList<UserTicket>();
 
 	public List<UserTicket> getUserTickets() {
 		return UserTickets;
 	}
 
-	public void setUserTickets(List<UserTicket> UserTickets) {
-		this.UserTickets = UserTickets;
+	public void setUserTickets(UserTicket ticket) {
+		if(UserTickets == null)
+			UserTickets = new ArrayList<UserTicket>();
+		ticket.setUser(this);
+		UserTickets.add(ticket);
 	}
 
 	public String getEmail() {

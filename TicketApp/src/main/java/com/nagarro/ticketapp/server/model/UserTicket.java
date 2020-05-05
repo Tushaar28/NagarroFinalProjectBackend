@@ -12,19 +12,25 @@ import javax.persistence.Table;
 public class UserTicket {
 	@Id
 	@GeneratedValue
-	private int id;
+	private Integer id;
 	
 	@Column(name = "ticket_type")
 	private String type;
 	
 	@Column(name = "priority")
-	private int priority;
+	private Integer priority;
+	
+	@Column(name = "travel_country")
+	private String destCountry;
 	
 	@Column(name = "travel_city")
-	private String dest;
+	private String destCity;
+	
+	@Column(name = "origin_country")
+	private String srcCountry;
 	
 	@Column(name = "origin_city")
-	private String src;
+	private String srcCity;
 	
 	@Column(name = "start_date")
 	private String startDate;
@@ -39,13 +45,13 @@ public class UserTicket {
 	private String passport;
 	
 	@Column(name = "expense_borne_by")
-	private int bearer;
+	private Integer bearer;
 	
 	@Column(name = "travel_approver")
 	private String approver;
 	
 	@Column(name = "duration")
-	private int duration;
+	private Integer duration;
 	
 	@Column(name = "cost_limit")
 	private String limit;
@@ -54,13 +60,24 @@ public class UserTicket {
 	private String details;
 	
 	@Column(name = "status")
-	private int status;
+	private Integer status;
+	
+	@Column(name = "isProcessing")
+	private Boolean processing;
 	
 	@ManyToOne
-	@JoinColumn(name = "email")
+	@JoinColumn(name = "username")
 	private User user;
 
-	public int getId() {
+	public Boolean isProcessing() {
+		return processing;
+	}
+
+	public void setProcessing(Boolean processing) {
+		this.processing = processing;
+	}
+
+	public Integer getId() {
 		return id;
 	}
 
@@ -72,28 +89,44 @@ public class UserTicket {
 		this.type = type;
 	}
 
-	public int getPriority() {
+	public Integer getPriority() {
 		return priority;
 	}
 
-	public void setPriority(int priority) {
+	public void setPriority(Integer priority) {
 		this.priority = priority;
 	}
 
-	public String getDest() {
-		return dest;
+	public String getDestCountry() {
+		return destCountry;
 	}
 
-	public void setDest(String dest) {
-		this.dest = dest;
+	public void setDestCountry(String destCountry) {
+		this.destCountry = destCountry;
 	}
 
-	public String getSrc() {
-		return src;
+	public String getDestCity() {
+		return destCity;
 	}
 
-	public void setSrc(String src) {
-		this.src = src;
+	public void setDestCity(String destCity) {
+		this.destCity = destCity;
+	}
+
+	public String getSrcCountry() {
+		return srcCountry;
+	}
+
+	public void setSrcCountry(String srcCountry) {
+		this.srcCountry = srcCountry;
+	}
+
+	public String getSrcCity() {
+		return srcCity;
+	}
+
+	public void setSrcCity(String srcCity) {
+		this.srcCity = srcCity;
 	}
 
 	public String getStartDate() {
@@ -128,11 +161,11 @@ public class UserTicket {
 		this.passport = passport;
 	}
 
-	public int getBearer() {
+	public Integer getBearer() {
 		return bearer;
 	}
 
-	public void setBearer(int bearer) {
+	public void setBearer(Integer bearer) {
 		this.bearer = bearer;
 	}
 
@@ -144,11 +177,11 @@ public class UserTicket {
 		this.approver = approver;
 	}
 
-	public int getDuration() {
+	public Integer getDuration() {
 		return duration;
 	}
 
-	public void setDuration(int duration) {
+	public void setDuration(Integer duration) {
 		this.duration = duration;
 	}
 
@@ -168,11 +201,11 @@ public class UserTicket {
 		this.details = details;
 	}
 
-	public int getStatus() {
+	public Integer getStatus() {
 		return status;
 	}
 
-	public void setStatus(int status) {
+	public void setStatus(Integer status) {
 		this.status = status;
 	}
 
@@ -186,11 +219,13 @@ public class UserTicket {
 
 	@Override
 	public String toString() {
-		return "UserTicket [id=" + id + ", type=" + type + ", priority=" + priority + ", dest=" + dest + ", src=" + src
-				+ ", startDate=" + startDate + ", endDate=" + endDate + ", project=" + project + ", passport="
-				+ passport + ", bearer=" + bearer + ", approver=" + approver + ", duration=" + duration + ", limit="
-				+ limit + ", details=" + details + ", status=" + status + ", user=" + user + "]";
+		return "UserTicket [id=" + id + ", type=" + type + ", priority=" + priority + ", destCountry=" + destCountry
+				+ ", destCity=" + destCity + ", srcCountry=" + srcCountry + ", srcCity=" + srcCity + ", startDate="
+				+ startDate + ", endDate=" + endDate + ", project=" + project + ", passport=" + passport + ", bearer="
+				+ bearer + ", approver=" + approver + ", duration=" + duration + ", limit=" + limit + ", details="
+				+ details + ", status=" + status + ", processing=" + processing + ", user=" + user + "]";
 	}
+	
 	
 	
 }
