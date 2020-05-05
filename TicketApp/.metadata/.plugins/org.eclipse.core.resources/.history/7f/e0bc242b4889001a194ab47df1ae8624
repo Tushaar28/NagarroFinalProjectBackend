@@ -1,8 +1,0 @@
-package com.nagarro.ticketapp.server.util;
-
-import com.google.gson.JsonObject;
-import com.nagarro.ticketapp.server.model.*;
-public class TicketResponseGenerator {
-	JsonObject ticket = new JsonObject();
-	
-}

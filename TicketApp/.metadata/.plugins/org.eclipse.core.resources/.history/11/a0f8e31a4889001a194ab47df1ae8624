@@ -1,5 +1,0 @@
-package com.nagarro.ticketapp.server.util;
-
-public class TicketResponseGenerator {
-
-}
